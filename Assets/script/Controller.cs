@@ -56,7 +56,26 @@ public class Controller : MonoBehaviour
 
     public void endOfTurn(){
         //tour de l'adversaire
-        ennemyScript.myTurn(playerScript.actualCase, plateau);
+        
+        if (ennemyScript.isDead())
+        {
+            Destroy(ennemy);
+            int randomNumber = Range(1, 5);
+
+            switch (randomNumber)
+            {
+                case 1:
+                    playerScript.artifacts[0] = new Agavoiture();
+                    break;
+                default:
+                    break;
+
+            }
+        }
+        else
+        {
+            ennemyScript.myTurn(playerScript.actualCase, plateau);
+        }
         
     }
 }

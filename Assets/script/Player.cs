@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public int[] actualCase;
     public int attackValue = 5;
     public int life = 50;
+    public Artifact[] artifacts = new Artifact[5];
+
     // Start is called before the first frame update
     void Start()
     {

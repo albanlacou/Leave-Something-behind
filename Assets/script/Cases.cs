@@ -36,11 +36,21 @@ void OnMouseDown(){
                     if(isRanged && objectOnCase){
                         
                         if(objectOnCase.GetComponent<Ennemy>()){
-                            
+
+                            foreach(var artifact in playerScript.artifacts)
+                            {
+                                artifact.doEffect(playerScript);
+                            }
                             int randomNumber = Range(1,6)+ playerScript.attackValue;
                             print(randomNumber);
                             objectOnCase.GetComponent<Ennemy>().takeDamage(randomNumber);
-                        }else{
+                            foreach (var artifact in playerScript.artifacts)
+                            {
+                                artifact.undoEffect(playerScript);
+                            }
+
+                        }
+                        else{
                             return;
                         }
                     }
