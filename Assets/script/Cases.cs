@@ -32,10 +32,12 @@ void OnMouseDown(){
                     break;
                 case Controller.Mode.basicAttack:
                     bool isRanged = playerScript.isAtRange(positionInTab);
+                    print(isRanged);
                     if(isRanged && objectOnCase){
+                        
                         if(objectOnCase.GetComponent<Ennemy>()){
                             
-                            int randomNumber = Range(1,6);
+                            int randomNumber = Range(1,6)+ playerScript.attackValue;
                             print(randomNumber);
                             objectOnCase.GetComponent<Ennemy>().takeDamage(randomNumber);
                         }else{

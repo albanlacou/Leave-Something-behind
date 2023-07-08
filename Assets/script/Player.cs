@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     public GameObject self;
     public int energy;
     public int[] actualCase;
-
+    public int attackValue = 5;
+    public int life = 50;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,8 @@ public class Player : MonoBehaviour
     {
         
     }
+
+   
 
     public void move(Vector2 destination,int[] destinationCaseTab){
         
